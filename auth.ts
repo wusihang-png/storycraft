@@ -4,6 +4,7 @@ import Google from "next-auth/providers/google"
 
 export const authConfig = {
     pages: {
+        trustHost: true,
         signIn: "/sign-in",
     },
     callbacks: {
@@ -70,6 +71,7 @@ export const authConfig = {
             }
         }),
     ],
+    
 } satisfies NextAuthConfig
 
 export const { handlers, signIn, signOut, auth } = NextAuth(authConfig)
